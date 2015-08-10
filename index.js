@@ -43,16 +43,5 @@ module.exports = function except(obj, keys) {
     }
   }
 
-/*      if (isObject(obj)) {
-         if (!Object.keys(obj).length) {
-           delete obj[first];
-         }
-      } else {
-        delete obj[first];
-      }
-    }
-  */
-
-
   return obj;
 };
