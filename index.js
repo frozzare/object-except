@@ -35,13 +35,24 @@ module.exports = function except(obj, keys) {
 
     if (isObject(value) && parts.length > 0) {
       except(obj[first], parts);
-      delete obj[first];
-    }
-
-    if (obj[first] !== undefined) {
+      if (isObject(obj[first]) && !Object.keys(obj[first]).length) {
+        delete obj[first];
+      }
+    } else {
       delete obj[first];
     }
   }
+
+/*      if (isObject(obj)) {
+         if (!Object.keys(obj).length) {
+           delete obj[first];
+         }
+      } else {
+        delete obj[first];
+      }
+    }
+  */
+
 
   return obj;
 };
