@@ -1,0 +1,46 @@
+{
+  "name": "object-except",
+  "description": "Remove specified properties from the object and return it",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/frozzare/object-except",
+  "author": {
+    "name": "Fredrik Forsmo",
+    "email": "fredrik.forsmo@gmail.com",
+    "url": "http://forsmo.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/frozzare/object-except.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "eslint index.js && node test.js"
+  },
+  "main": "index",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "extract",
+    "object",
+    "except",
+    "property"
+  ],
+  "dependencies": {
+    "is-object": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.1.0",
+    "eslint-config-xo-multi-spaces": "^1.0.0",
+    "tape": "^4.0.3"
+  },
+  "eslintConfig": {
+    "extends": "xo-multi-spaces",
+    "rules": {
+      "space-before-function-paren": 0
+    }
+  }
+}
