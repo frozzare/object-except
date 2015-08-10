@@ -5,7 +5,7 @@ Remove specified properties from the object and return it.
 ## Install
 
 ```
-$ npm install --save object-only
+$ npm install --save object-except
 ```
 
 ## Example
