@@ -5,7 +5,7 @@
  */
 
 var isObject = require('is-object');
-var clone = require('clone');
+var clone    = require('clone');
 
 /**
  * Pick values from object except the given keys.
