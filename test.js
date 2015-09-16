@@ -39,6 +39,18 @@ test('should get properties from object', function (t) {
 	t.equal(0, Object.keys(res).length);
 });
 
+test('shouldn’t mutate the object', function (t) {
+	t.plan(2);
+
+	var obj = {
+		foo: 'bar',
+		bar: 'foo'
+	};
+
+	t.deepEqual(objectExcept(obj, 'foo'), {bar: 'foo'});
+	t.deepEqual(obj, {foo: 'bar', bar: 'foo'});
+});
+
 test('should throw error with wrong arguments', function (t) {
 	t.plan(2);
 

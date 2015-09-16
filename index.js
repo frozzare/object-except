@@ -5,6 +5,7 @@
  */
 
 var isObject = require('is-object');
+var clone = require('clone');
 
 /**
  * Pick values from object except the given keys.
@@ -28,20 +29,22 @@ module.exports = function except(obj, keys) {
     throw new Error('`keys` should be array');
   }
 
+  var result = clone(obj);
+
   for (var i = 0, l = keys.length; i < l; i++) {
     var parts = keys[i].split('.');
     var first = parts.shift();
-    var value = obj[first];
+    var value = result[first];
 
     if (isObject(value) && parts.length > 0) {
-      except(obj[first], parts);
-      if (isObject(obj[first]) && !Object.keys(obj[first]).length) {
-        delete obj[first];
+      result = except(result[first], parts);
+      if (isObject(result[first]) && !Object.keys(result[first]).length) {
+        delete result[first];
       }
     } else {
-      delete obj[first];
+      delete result[first];
     }
   }
 
-  return obj;
+  return result;
 };
