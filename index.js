@@ -37,7 +37,7 @@ module.exports = function except(obj, keys) {
     var value = result[first];
 
     if (isObject(value) && parts.length > 0) {
-      except(result[first], parts);
+      result = except(result[first], parts);
       if (isObject(result[first]) && !Object.keys(result[first]).length) {
         delete result[first];
       }
